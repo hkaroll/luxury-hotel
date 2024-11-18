@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Hotel & Resort</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="stylesheet" href="/fontawesome-assets.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo"><a href="/index.html">Luxury Hotel</a></div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/sobre.html">Sobre</a>
+                <a href="/quartos.html">Quartos</a>
+                <a href="/reserva.html">Reservas</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </div>
+    </nav>
+    <div class="booking">
+        <h2 class="section-title">Faça sua Reserva</h2>
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="name" class="booking-hover">Nome Completo</label>
+                        <input type="text" id="name" placeholder="Digite o seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Digite o seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Número de Hóspedes</label>
+                        <input type="number" id="guests" min="1" placeholder="Digite o número de hóspedes" required>
+                    </div>
+                    <div class="additional-guests" style="display: none;">
+                        <h3>Informações do Outro Hóspede</h3>
+                        <div class="form-group">
+                        <label for="guest-name-1">Nome do Hóspede</label>
+                        <input type="text" id="guest-name-1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-type">Tipo de Quarto</label>
+                        <select id="room-type" required>
+                            <option value="">Selecione um quarto</option>
+                            <option value="standard">Quarto Standard</option>
+                            <option value="luxo">Suíte Luxo</option>
+                            <option value="presidencial">Suíte Presidencial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-in">Check-in</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Check-out</label>
+                        <input type="date" id="check-out" required>
+                    </div>
+                    <button type="submit" class="submit-button">Reservar Agora</button>
+                </form>
+        </section>
+    </div>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contato</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Endereço</h3>
+                <p>Av. Principal, 1000 - Centro</p>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <h3>Telefone</h3>
+                <p>+55 (11) 1234-5678</p>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>contato@luxuryhotel.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Luxury Hotel. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const guestsInput = document.getElementById('guests');
+        const additionalGuestsDiv = document.querySelector('.additional-guests');
+        const guestNameInputs = document.querySelectorAll('.additional-guests input');
+
+        guestsInput.addEventListener('input', () => {
+        const numGuests = parseInt(guestsInput.value, 10) || 1;
+        additionalGuestsDiv.style.display = numGuests > 1 ? 'block' : 'none';
+
+        guestNameInputs.forEach((input, index) => {
+            input.required = index < numGuests - 1;
+        });
+        });
+    </script>
+</body>
+</html>
