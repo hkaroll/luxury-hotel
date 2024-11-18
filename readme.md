@@ -100,7 +100,7 @@ luxury-hotel/
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
+Este projeto foi criação minha hkaroll (Karoll Reis)
 
 ## 📌 Observações Importantes
 
