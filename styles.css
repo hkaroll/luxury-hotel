@@ -448,6 +448,7 @@ max-width: 50%;
 
     .section-title {
     font-size: 1.8rem;
+    padding-top: 50px;
     }
     .about-text p {
     font-size: 0.9rem;
